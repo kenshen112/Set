@@ -115,14 +115,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\assignment05.cpp" />
-    <ClCompile Include="..\card.cpp" />
-    <ClCompile Include="..\cardTest.cpp" />
-    <ClCompile Include="..\goFish.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\card.h" />
-    <ClInclude Include="..\goFish.h" />
+    <ClInclude Include="card.h" />
+    <ClInclude Include="goFish.h" />
     <ClInclude Include="set.h" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="assignment05.cpp" />
+    <ClCompile Include="card.cpp" />
+    <ClCompile Include="cardTest.cpp" />
+    <ClCompile Include="goFish.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

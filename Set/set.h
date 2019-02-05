@@ -68,15 +68,20 @@ public:
 
 		}
 
+		iterator(T * p)
+		{
+
+		}
+
 		iterator(const iterator &rhs)
 		{
 
 		}
 
 
-		iterator operator=(iterator it);
-		bool isEquals(iterator it);
-		bool isNE1ual(iterator it);
+		iterator operator=(iterator &it);
+		bool operator ==(iterator &it);
+		bool operator!=(iterator &it);
 		iterator increment();
 		iterator decrement();
 		T dereference();
@@ -144,17 +149,29 @@ void set<T>::clear()
 }
 
 template<class T>
-void set<T>::insert(const T & t)
+void set<T>::insert(const T & t) // this is from my first attempt it kindaish works, a good start none the less
 {
-
-	int ifFound = find(item);
+	int ifFound = findIndex(item);
 	if (ifFound == 0)
 	{
 		data[insertIndex] = item;
 		numItems++;
 	}
 
+	if (numElements == numCapacity)
+	{
+		resize(numCapacity * 2);
+	}
+	else
+	{
+		for (int i = numElements; i > 0; i--) // The order of the items in Set
+		{
+			data[i + 1] = data[i];
+			data[ifFound] = item;
+		}
 
+		numElements++;
+	}
 
 }
 
