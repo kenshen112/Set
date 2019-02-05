@@ -115,6 +115,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\assignment05.cpp" />
+    <ClCompile Include="..\card.cpp" />
+    <ClCompile Include="..\cardTest.cpp" />
+    <ClCompile Include="..\goFish.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\card.h" />
+    <ClInclude Include="..\goFish.h" />
+    <ClInclude Include="set.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\hand.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
