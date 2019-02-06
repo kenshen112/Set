@@ -48,6 +48,7 @@ namespace custom
 			numCapacity = rhs.numCapacity;
 		}
 
+		class iterator;
 
 		int size();
 		int findIndex(T item);
@@ -60,51 +61,8 @@ namespace custom
 		set operator=(set& rhs);
 		set operator-(const set <T> & rhs);
 
-		class set <T> ::iterator
-		{
-
-		public:
-			// default constructor
-			iterator() : p(nullptr) {}
-
-			// initialize to direct p to some item
-			iterator(T * p) : p(p) {}
-
-			// not equals operator
-			bool operator != (const SetIterator & rhs) const
-			{
-				return rhs.p != this->p;
-			}
-
-			//equals operator
-			iterator <T>& operator= (const T & rhs) throw(const char*);
-
-			// dereference operator
-			T & operator * ()
-			{
-				return *p;
-			}
-
-			// prefix increment
-			iterator <T> & operator ++ ()
-			{
-				p++;
-				return *this;
-			}
-
-			// postfix increment
-			iterator <T> operator++(int postfix)
-			{
-				iterator tmp(*this);
-				p++;
-				return tmp;
-			}
-
-		private:
-			T * p;
-		};
-
-		iterator find(T t);
+		
+		iterator find(T t) const;
 		iterator erase(iterator it);
 		iterator begin();
 		iterator end();
@@ -157,7 +115,7 @@ namespace custom
 	template<class T>
 	bool set<T>::empty()
 	{
-		return false;
+		return numCapacity == 0;
 	}
 
 	template<class T>
@@ -217,9 +175,32 @@ namespace custom
 	}
 
 	template<class T>
-	set<T>::iterator set<T>::find(T t)
+	set<T>::iterator set<T>::find(T t) const
 	{
-		return iterator();
+		iterator it;
+
+		int begining = 0;
+		int ending = numElements - 1;
+
+		while (begining <= ending)
+		{
+			int middle = (begining + ending) / 2;
+			if (item == data[middle])
+			{
+				return middle;
+			}
+
+			else if (item < data[middle]) {
+				ending = middle - 1;
+			}
+			else
+			{
+				begining = middle + 1;
+			}
+
+		}
+
+		return it(data[numElements]);
 	}
 
 	template<class T>
@@ -231,13 +212,60 @@ namespace custom
 	template<class T>
 	set<T>::iterator set<T>::begin()
 	{
-		return iterator();
+		return iterator(data);
 	}
 
 	template<class T>
 	set<T>::iterator set<T>::end()
 	{
-		return iterator();
+		return iterator(data[numElements]);
 	}
+
+	template <class T>
+	class set <T> ::iterator
+	{
+
+	public:
+		// default constructor
+		iterator() : p(nullptr) {}
+
+		// initialize to direct p to some item
+		iterator(T * p) : p(p) {}
+
+		// not equals operator
+		bool operator != (const iterator & rhs) const
+		{
+			return rhs.p != this->p;
+		}
+
+		//equals operator
+		iterator <T>& operator= (const T & rhs) throw(const char*);
+
+		// dereference operator
+		T & operator * ()
+		{
+			return *p;
+		}
+
+		// prefix increment
+		iterator <T> & operator ++ ()
+		{
+			p++;
+			return *this;
+		}
+
+		// postfix increment
+		iterator <T> operator++(int postfix)
+		{
+			iterator tmp(*this);
+			p++;
+			return tmp;
+		}
+
+	private:
+		T * p;
+	};
+
+
 
 }
