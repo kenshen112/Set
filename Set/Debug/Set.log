@@ -1,111 +1,51 @@
 ﻿  assignment05.cpp
-c:\users\final\source\repos\set\set\set.h(180): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(180): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(180): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(181): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(181): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(209): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(209): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(209): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(210): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(210): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(215): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(215): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(215): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(216): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(216): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(221): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(221): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(221): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(222): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(222): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(244): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
-  c:\users\final\source\repos\set\set\set.h(269): note: see reference to class template instantiation 'custom::set<T>::iterator' being compiled
-c:\users\final\source\repos\set\set\assignment05.cpp(65): error C2065: 'choice': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(66): error C2065: 'choice': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(67): error C2050: switch expression not integral
-c:\users\final\source\repos\set\set\assignment05.cpp(69): error C3861: 'goFish': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(72): error C3861: 'testSimple': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(76): error C3861: 'testFill': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(80): error C3861: 'testFind': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(84): error C3861: 'testUnionIntersection': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(88): error C3861: 'testConstIterator': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(92): error C3861: 'testDifference': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(114): error C2065: 's1': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(115): error C2065: 's1': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2039: 'const_iterator': is not a member of 'custom::set<int>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2065: 'const_iterator': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2146: syntax error: missing ';' before identifier 'it'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2143: syntax error: missing ';' before '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2143: syntax error: missing ')' before '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2059: syntax error: '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2065: 'it': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2039: 'cend': is not a member of 'custom::set<int>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2059: syntax error: ')'
-c:\users\final\source\repos\set\set\assignment05.cpp(363): error C2146: syntax error: missing ';' before identifier 'cout'
-c:\users\final\source\repos\set\set\assignment05.cpp(363): error C2065: 'it': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(403): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(63): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
-  c:\users\final\source\repos\set\set\assignment05.cpp(403): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
-c:\users\final\source\repos\set\set\assignment05.cpp(405): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(63): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
-  c:\users\final\source\repos\set\set\assignment05.cpp(405): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
+c:\users\final\source\repos\set\set\set.h(181): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(181): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(181): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(182): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(182): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(210): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(210): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(210): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(211): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(211): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(225): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(225): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(225): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(226): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(226): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(231): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(231): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(231): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(232): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(232): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(287): error C2059: syntax error: ')'
+  c:\users\final\source\repos\set\set\set.h(324): note: see reference to class template instantiation 'custom::set<T>::const_iterator' being compiled
+c:\users\final\source\repos\set\set\set.h(287): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\final\source\repos\set\set\set.h(324): fatal error C1903: unable to recover from previous error(s); stopping compilation
   goFish.cpp
-c:\users\final\source\repos\set\set\set.h(180): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(180): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(180): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(181): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(181): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(209): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(209): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(209): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(210): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(210): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(215): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(215): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(215): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(216): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(216): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(221): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(221): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(221): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(222): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(222): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(244): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
-  c:\users\final\source\repos\set\set\set.h(269): note: see reference to class template instantiation 'custom::set<T>::iterator' being compiled
-c:\users\final\source\repos\set\set\card.h(30): error C2059: syntax error: ':'
-c:\users\final\source\repos\set\set\card.h(45): error C2059: syntax error: 'return'
-c:\users\final\source\repos\set\set\card.h(45): error C2238: unexpected token(s) preceding ';'
-c:\users\final\source\repos\set\set\card.h(46): error C2628: 'Card' followed by 'bool' is illegal (did you forget a ';'?)
-c:\users\final\source\repos\set\set\card.h(46): error C2270: '!=': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(46): error C2805: binary 'operator !=' has too few parameters
-c:\users\final\source\repos\set\set\card.h(46): error C2065: 'value': undeclared identifier
-c:\users\final\source\repos\set\set\card.h(46): error C2039: 'value': is not a member of 'Card'
-  c:\users\final\source\repos\set\set\card.h(26): note: see declaration of 'Card'
-c:\users\final\source\repos\set\set\card.h(47): error C2270: '>=': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(47): error C2805: binary 'operator >=' has too few parameters
-c:\users\final\source\repos\set\set\card.h(47): error C2065: 'value': undeclared identifier
-c:\users\final\source\repos\set\set\card.h(47): error C2039: 'value': is not a member of 'Card'
-  c:\users\final\source\repos\set\set\card.h(26): note: see declaration of 'Card'
-c:\users\final\source\repos\set\set\card.h(48): error C2270: '>': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(48): error C2805: binary 'operator >' has too few parameters
-c:\users\final\source\repos\set\set\card.h(48): error C2065: 'value': undeclared identifier
-c:\users\final\source\repos\set\set\card.h(48): error C2039: 'value': is not a member of 'Card'
-  c:\users\final\source\repos\set\set\card.h(26): note: see declaration of 'Card'
-c:\users\final\source\repos\set\set\card.h(49): error C2270: '<=': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(49): error C2805: binary 'operator <=' has too few parameters
-c:\users\final\source\repos\set\set\card.h(49): error C2065: 'value': undeclared identifier
-c:\users\final\source\repos\set\set\card.h(49): error C2039: 'value': is not a member of 'Card'
-  c:\users\final\source\repos\set\set\card.h(26): note: see declaration of 'Card'
-c:\users\final\source\repos\set\set\card.h(50): error C2270: '<': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(50): error C2805: binary 'operator <' has too few parameters
-c:\users\final\source\repos\set\set\card.h(50): error C2065: 'value': undeclared identifier
-c:\users\final\source\repos\set\set\card.h(50): error C2039: 'value': is not a member of 'Card'
-  c:\users\final\source\repos\set\set\card.h(26): note: see declaration of 'Card'
-c:\users\final\source\repos\set\set\card.h(53): error C2059: syntax error: 'private'
-c:\users\final\source\repos\set\set\card.h(58): error C2270: 'validate': modifiers not allowed on nonmember functions
-c:\users\final\source\repos\set\set\card.h(59): error C2059: syntax error: '}'
-c:\users\final\source\repos\set\set\card.h(59): error C2143: syntax error: missing ';' before '}'
+c:\users\final\source\repos\set\set\set.h(181): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(181): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(181): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(182): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(182): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(210): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(210): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(210): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(211): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(211): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(225): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(225): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(225): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(226): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(226): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(231): warning C4346: 'iterator': dependent name is not a type
+  c:\users\final\source\repos\set\set\set.h(231): note: prefix with 'typename' to indicate a type
+c:\users\final\source\repos\set\set\set.h(231): error C2061: syntax error: identifier 'iterator'
+c:\users\final\source\repos\set\set\set.h(232): error C2143: syntax error: missing ';' before '{'
+c:\users\final\source\repos\set\set\set.h(232): error C2447: '{': missing function header (old-style formal list?)
+c:\users\final\source\repos\set\set\set.h(287): error C2059: syntax error: ')'
+  c:\users\final\source\repos\set\set\set.h(324): note: see reference to class template instantiation 'custom::set<T>::const_iterator' being compiled
+c:\users\final\source\repos\set\set\set.h(287): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\final\source\repos\set\set\set.h(324): fatal error C1903: unable to recover from previous error(s); stopping compilation
   Generating Code...

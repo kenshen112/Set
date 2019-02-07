@@ -51,6 +51,7 @@ namespace custom
 		}
 
 		class iterator;
+		class const_iterator;
 
 		int size();
 		int findIndex(T item);
@@ -58,7 +59,7 @@ namespace custom
 		bool empty();
 		void clear();
 		void  insert(const T & t);
-		set operator || (const set <T> & rhs);
+		set operator|| (const set <T> & rhs);
 		set operator && (const set <T> & rhs);
 		set operator=(set& rhs);
 		set operator-(const set <T> & rhs);
@@ -153,8 +154,42 @@ namespace custom
 	}
 
 	template<class T>
-	set<T> set<T>::operator||(const set<T>& rhs)
+	set<T> set<T>::operator || (const set <T> & rhs)
 	{
+		set <T> setReturn = this;
+		int iLhs = 0;
+		int iRhs = 0;
+
+		while (iLhs < this->numElements || iRhs < rhs.numElements)
+		{
+			if (iLhs == this->numElements)
+			{
+				setReturn.insert(rhs.data[iRhs++]);
+			}
+
+			else if (iRhs == rhs.numElements)
+			{
+				setReturn.insert(this->data[iLhs++]);
+			}
+
+			else if (this->data[iLhs] == rhs.data[iRhs])
+			{
+				setReturn.insert(this->data[iLhs]);
+				iLhs++;
+				iRhs++;
+			}
+
+			else if (this->data[iLhs] < rhs.data[iRhs])
+			{
+				setReturn.insert(this->data[iLhs++]);
+			}
+
+			else
+			{
+				setReturn.insert(rhs.data[iRhs++]);
+			}
+		}
+
 		return set();
 	}
 
@@ -208,7 +243,16 @@ namespace custom
 	template<class T>
 	set<T>::iterator set<T>::erase(iterator it)
 	{
-		return iterator();
+		int iErase = findIndex(it);
+		if (data[iErase] == it)
+		{
+			for (int i = iErase; i < numElements; i++)
+			{
+				data[i] = data[i + 1];
+			}
+			numElements--;
+
+		}
 	}
 
 	template<class T>
@@ -241,7 +285,7 @@ namespace custom
 		}
 
 		//equals operator
-		iterator & operator= (const T & rhs) throw(const char*);
+		iterator & operator= (const T & rhs);
 
 		// dereference operator
 		T & operator * ()
@@ -268,6 +312,50 @@ namespace custom
 		T * p;
 	};
 
+	template <class T>
+	class set <T> ::const_iterator
+	{
+
+	public:
+		// default constructor
+		iterator() : p(nullptr) {}
+
+		// initialize to direct p to some item
+		iterator(T * p) : p(p) {}
+
+		// not equals operator
+		bool operator != (const iterator & rhs) const
+		{
+			return rhs.p != this->p;
+		}
+
+		//equals operator
+		iterator & operator= (const T & rhs);
+
+		// dereference operator
+		T & operator * ()
+		{
+			return *p;
+		}
+
+		// prefix increment
+		iterator & operator ++ ()
+		{
+			p++;
+			return *this;
+		}
+
+		// postfix increment
+		iterator operator++(int postfix)
+		{
+			iterator tmp(*this);
+			p++;
+			return tmp;
+		}
+
+	private:
+		T * p;
+	};
 
 
 }
