@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <cassert>
 
 namespace custom
 {
@@ -32,9 +34,9 @@ namespace custom
 		{
 			assert(rhs.numCapacity >= 0);
 
-			if (numCapacity == rhs.size())
+			if (numCapacity == rhs.numCapacity)
 			{
-				resize(rhs.size());
+				resize(rhs.numCapacity);
 			}
 
 			try
@@ -126,11 +128,11 @@ namespace custom
 	template<class T>
 	void set<T>::insert(const T & t) // this is from my first attempt it kindaish works, a good start none the less
 	{
-		int ifFound = findIndex(item);
+		int ifFound = findIndex(t);
 		if (ifFound == 0)
 		{
-			data[insertIndex] = item;
-			numItems++;
+			data[numElements] = t;
+			numElements++;
 		}
 
 		if (numElements == numCapacity)
@@ -142,7 +144,7 @@ namespace custom
 			for (int i = numElements; i > 0; i--) // The order of the items in Set
 			{
 				data[i + 1] = data[i];
-				data[ifFound] = item;
+				data[ifFound] = t;
 			}
 
 			numElements++;
@@ -239,7 +241,7 @@ namespace custom
 		}
 
 		//equals operator
-		iterator <T>& operator= (const T & rhs) throw(const char*);
+		iterator & operator= (const T & rhs) throw(const char*);
 
 		// dereference operator
 		T & operator * ()
@@ -248,14 +250,14 @@ namespace custom
 		}
 
 		// prefix increment
-		iterator <T> & operator ++ ()
+		iterator & operator ++ ()
 		{
 			p++;
 			return *this;
 		}
 
 		// postfix increment
-		iterator <T> operator++(int postfix)
+		iterator operator++(int postfix)
 		{
 			iterator tmp(*this);
 			p++;
