@@ -4,10 +4,10 @@ c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2662: 'custom:
 c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2662: 'custom::set<int>::const_iterator custom::set<int>::cend(void)': cannot convert 'this' pointer from 'const custom::set<int>' to 'custom::set<int> &'
   c:\users\final\source\repos\set\set\assignment05.cpp(362): note: Conversion loses qualifiers
 c:\users\final\source\repos\set\set\assignment05.cpp(403): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(37): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\final\source\repos\set\set\set.h(39): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
   c:\users\final\source\repos\set\set\assignment05.cpp(403): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
 c:\users\final\source\repos\set\set\assignment05.cpp(405): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(37): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\final\source\repos\set\set\set.h(39): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
   c:\users\final\source\repos\set\set\assignment05.cpp(405): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
   goFish.cpp
   Generating Code...

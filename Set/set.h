@@ -34,9 +34,30 @@ public:
 	void  insert(const T & t);
 	set operator|| (const set <T> & rhs);
 	set operator && (const set <T> & rhs);
-	set operator=(set& rhs);
 	set operator-(const set <T> & rhs);
 
+	set operator=(set & rhs)
+	{
+		if (numCapacity < rhs.numElements)
+		{
+			resize(rhs.numElements);
+		}
+		try
+		{
+			data = new T[rhs.numCapacity];
+		}
+		catch (std::bad_alloc)
+		{
+			throw "ERROR: Unable to allocate buffer";
+		}
+		numCapacity = rhs.numCapacity;
+		for (int i = 0; i < rhs.numElements; i++)
+		{
+			insert(rhs.data[i]);
+		}
+
+		return *this;
+	}
 		
 	iterator find(T t) const;
 	iterator erase(iterator it);
@@ -44,7 +65,6 @@ public:
 	iterator end();
 	const_iterator cend();
 	const_iterator cbegin();
-
 };
 
 /*************************
@@ -324,32 +344,6 @@ set<T> set<T>::operator && (const set <T> & rhs)
 	return setReturn;
 }
 
-/***********************************************
-*
-*
-***********************************************/
-template<class T>
-set<T> set<T>::operator=(set & rhs)
-{
-	if (numCapacity < rhs.numElements)
-	{
-		resize(rhs.numElements);
-	}
-	try
-	{
-		data = new T[rhs.numCapacity];
-	}
-	catch (std::bad_alloc)
-	{
-		throw "ERROR: Unable to allocate buffer";
-	}
-	numCapacity = rhs.numCapacity;
-	for (int i = 0; i < rhs.numElements; i++)
-	{
-		insert(rhs.data[i]);
-	}
-	return *this;
-}
 
 /***********************************************
 *
@@ -358,7 +352,19 @@ set<T> set<T>::operator=(set & rhs)
 template<class T>
 set<T> set<T>::operator-(const set <T> & rhs)
 {
-	return set();
+	set <T> returnSet = rhs;
+
+	for (int j = 0; j < returnSet.numElements; j++)
+	{
+
+		if (data[j] == returnSet.data[j])
+		{
+			returnSet.data[j] = data[j + 1];
+		}
+		
+	}
+
+	return returnSet;
 }
 
 /***********************************************
