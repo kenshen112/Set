@@ -459,41 +459,7 @@ public:
 
 private:
    T * p;
-/*
-public:
-   // default constructor
-   const_iterator() : p(nullptr) {}
 
-   // initialize to direct p to some item
-   const_iterator(T * p) : p(p) {}
-
-   
-   //equals operator
-   iterator & operator= (const T & rhs);
-
-   // dereference operator
-   T & operator * ()
-   {
-      return *p;
-   }
-
-   // prefix increment
-   const_iterator & operator ++ ()
-   {
-      p++;
-      return *this;
-   }
-
-   // postfix increment
-   const_iterator operator++(const int postfix)
-   {
-      const_iterator tmp(*this);
-      p++;
-      return tmp;
-   }
-
-private:
-   T * p;*/
 };
 
 /***********************************************
