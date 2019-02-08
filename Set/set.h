@@ -358,7 +358,19 @@ set<T> set<T>::operator=(set & rhs)
 template<class T>
 set<T> set<T>::operator-(const set <T> & rhs)
 {
-	return set();
+	set <T> returnSet = rhs;
+
+	for (int j = 0; j < returnSet.numElements; j++)
+	{
+
+		if (this->data[j] == returnSet.data[j])
+		{
+			returnSet.data[j] = this->data[j + 1];
+		}
+		
+	}
+
+	return returnSet;
 }
 
 /***********************************************
