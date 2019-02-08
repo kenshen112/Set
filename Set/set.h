@@ -27,7 +27,7 @@ public:
 	class const_iterator;
 
 	int size();
-	int findIndex(T item);
+	size_t findIndex(T item);
 	int resize(int numCapacity);
 	bool empty();
 	void clear();
@@ -75,11 +75,11 @@ set<T>::set(int numCapacity)
 template<class T>
 set<T>::set(const set & rhs)
 {
-   assert(rhs.numCapacity >= 0);
+    assert(rhs.numCapacity >= 0);
 
-   if (numCapacity == rhs.numCapacity)
+   if (numCapacity == rhs.numElements)
    {
-      resize(rhs.numCapacity);
+      resize(rhs.numElements);
    }
 
    try
@@ -91,6 +91,12 @@ set<T>::set(const set & rhs)
       throw "ERROR: Unable to allocate buffer";
    }
    numCapacity = rhs.numCapacity;
+   int tempElements = rhs.numElements;
+
+   for (int i = 0; i < rhs.numElements; i++)
+   {
+      insert(rhs.data[i]);
+   }
 }
 
 /***********************
@@ -117,10 +123,10 @@ int set<T>::size()
 *
 ***********************************************/
 template<class T>
-int set<T>::findIndex(T item)
+size_t set<T>::findIndex(T item)
 {
-	int begining = 0;
-	int ending = numElements - 1;
+	size_t begining = 0;
+	size_t ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -150,7 +156,34 @@ int set<T>::findIndex(T item)
 template<class T>
 int set<T>::resize(int numCapacity)
 {
-	return 0;
+	// do nothing if there is nothing to do
+	if (numCapacity < this->numCapacity)
+	{
+		return 0;
+	}
+	T x;
+	int s;
+	try
+	{
+		//Create new deque  
+		T *dataNew = new T[numCapacity];
+
+		for (int i = 0; i < size(); i++)
+		{
+			dataNew[i] = data[i];
+
+			x = dataNew[i];
+		}
+
+		//copy deque
+		data = dataNew;
+		//set new capacity
+		this->numCapacity = numCapacity;
+
+	}
+	catch (std::bad_alloc) {
+		throw "ERROR: Unable to allocate new buffer for deque";
+	}
 }
 
 /***********************************************
@@ -244,7 +277,7 @@ set<T> set<T>::operator || (const set <T> & rhs)
 		}
 	}
 
-	return set();
+	return setReturn;
 }
 
 /***********************************************
@@ -254,7 +287,41 @@ set<T> set<T>::operator || (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator && (const set <T> & rhs)
 {
-	return set();
+	set <T> setReturn = this;
+	int iLhs = 0;
+	int iRhs = 0;
+
+	while (iLhs < this->numElements || iRhs < rhs.numElements)
+	{
+		if (iLhs == this->numElements)
+		{
+			return setReturn;
+		}
+
+		else if (iRhs == rhs.numElements)
+		{
+			return setReturn;
+		}
+
+		else if (this->data[iLhs] == rhs.data[iRhs])
+		{
+			setReturn.insert(this->data[iLhs]);
+			iLhs++;
+			iRhs++;
+		}
+
+		else if (this->data[iLhs] < rhs.data[iRhs])
+		{
+			iLhs++;
+		}
+
+		else
+		{
+			iRhs++;
+		}
+	}
+
+	return setReturn;
 }
 
 /***********************************************
@@ -264,7 +331,24 @@ set<T> set<T>::operator && (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator=(set & rhs)
 {
-	return set();
+	if (numCapacity < rhs.numElements)
+	{
+		resize(rhs.numElements);
+	}
+	try
+	{
+		data = new T[rhs.numCapacity];
+	}
+	catch (std::bad_alloc)
+	{
+		throw "ERROR: Unable to allocate buffer";
+	}
+	numCapacity = rhs.numCapacity;
+	for (int i = 0; i < rhs.numElements; i++)
+	{
+		insert(rhs.data[i]);
+	}
+	return *this;
 }
 
 /***********************************************
@@ -374,6 +458,7 @@ public:
 private:
    T * p;
 };
+
 /***********************************************
 *
 *
@@ -383,8 +468,8 @@ typename set<T>::iterator set<T>::find(T t) const
 {
 	iterator it;
 
-	int begining = 0;
-	int ending = numElements - 1;
+	size_t begining = 0;
+	size_t ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -457,8 +542,6 @@ typename set<T>::const_iterator set<T>::cend()
 {
 	return const_iterator(data[numElements]);
 }
-
-
 
 }
 #endif // !SET_H
