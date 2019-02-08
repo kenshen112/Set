@@ -359,8 +359,8 @@ void testConstIterator()
       // display
       cout << "Display the contents using a const iterator\n";
       const set <int> s2(s1);
-      for (set <int> :: const_iterator it = s2.cbegin(); it != s2.cend(); ++it)
-         cout << '\t' << *it << endl;
+     // for (set <int> :: const_iterator it = s2.cbegin(); it != s2.cend(); ++it)
+         //cout << '\t' << *it << endl;
    }
    catch (const char * sError)
    {
@@ -400,9 +400,9 @@ void testDifference()
 
 	  s1 - s2 and s2 - s1;
       set <char> sDifference;
-      sDifference = s1 - s2;
+      //sDifference = s1 - s2;
       cout << "\t" << s1 << " - " << s2 << " = " << sDifference << endl;
-      sDifference = s2 - s1;
+      //sDifference = s2 - s1;
       cout << "\t" << s2 << " - " << s1 << " = " << sDifference << endl;
    }
    catch (const char * sError)

@@ -27,7 +27,7 @@ public:
 	class const_iterator;
 
 	int size();
-	int findIndex(T item) const; 
+	int findIndex(const T item) const; 
 	int resize(int numCapacity);
 	bool empty();
 	void clear();
@@ -37,7 +37,7 @@ public:
 	set operator-(const set <T> & rhs);
    //set operator != (const set <T> & rhs);
 
-	bool operator ==(const set & rhs) { return rhs == this; }
+	bool operator ==(const set & rhs) { return rhs == *this; }
 
 	set<T> & operator=(set<T> & rhs)
 	{
@@ -61,9 +61,12 @@ public:
 
 		return *this;
 	}
-		
+	
+	bool operator ==(const iterator & rhs) { return rhs == *this; }
+
+
 	iterator find(T t) const;
-	iterator erase(iterator it);
+	iterator erase(set <T> ::iterator & it);
 	iterator begin();
 	iterator end();
 	const_iterator cend()  const;
@@ -146,7 +149,7 @@ int set<T>::size()
 *
 ***********************************************/
 template<class T>
-int set<T>::findIndex(T item) const
+int set<T>::findIndex(const T item) const
 {
 	int begining = 0;
 	int ending = numElements - 1;
@@ -355,7 +358,7 @@ set<T> set<T>::operator && (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator-(const set <T> & rhs) //only return objects that are in one set not the other.
 {
-	set <T> returnSet = new set<T>();
+	set <T> returnSet = set<T>();
 
 	for (int i = 0; i < rhs.numElements; i++)
 	{
@@ -500,7 +503,6 @@ private:
 template<class T>
 typename set<T>::iterator set<T>::find(T t) const
 {
-	iterator it;
 
 	int begining = 0;
 	int ending = numElements - 1;
@@ -510,7 +512,7 @@ typename set<T>::iterator set<T>::find(T t) const
 		int middle = (begining + ending) / 2;
 		if (t == data[middle])
 		{
-			return middle;
+			return set<T> :: iterator (data + (middle - 1));
 		}
 
 		else if (t < data[middle]) {
@@ -523,7 +525,7 @@ typename set<T>::iterator set<T>::find(T t) const
 
 	}
 
-	return numElements;
+	return set <T> ::iterator (&data[numElements]);
 }
 
 /***********************************************
@@ -531,7 +533,7 @@ typename set<T>::iterator set<T>::find(T t) const
 *
 ***********************************************/
 template<class T>
-typename set<T>::iterator set<T>::erase(iterator it)
+typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 {
 	int iErase = find(it);
 	if (data[iErase] == it)
@@ -552,7 +554,7 @@ typename set<T>::iterator set<T>::erase(iterator it)
 template<class T>
 typename set<T>::iterator set<T>::begin()
 {
-	return iterator(data);
+	return set<T> :: iterator(data);
 }
 
 /***********************************************
@@ -562,19 +564,19 @@ typename set<T>::iterator set<T>::begin()
 template<class T>
 typename set<T>::iterator set<T>::end()
 {
-	return iterator(&data[numElements]);
+	return set<T> :: iterator(&data[numElements]);
 }
 
 template <class T>
 typename set<T>::const_iterator set<T>::cbegin() const
 {
-	return const_iterator(data);
+	return set<T> :: const_iterator(data);
 }
 
 template <class T>
 typename set<T>::const_iterator set<T>::cend() const
 {
-	return const_iterator(&data[numElements]);
+	return set<T> :: const_iterator(&data[numElements]);
 }
 
 }
