@@ -42,7 +42,8 @@ public:
 	iterator erase(iterator it);
 	iterator begin();
 	iterator end();
-
+	const_iterator cend();
+	const_iterator cbegin();
 
 };
 
@@ -335,10 +336,10 @@ class set <T> :: const_iterator
 
 public:
    // default constructor
-   iterator() : p(nullptr) {}
+   const_iterator() : p(nullptr) {}
 
    // initialize to direct p to some item
-   iterator(T * p) : p(p) {}
+   const_iterator(T * p) : p(p) {}
 
    // not equals operator
    bool operator != (const iterator & rhs) const
@@ -356,16 +357,16 @@ public:
    }
 
    // prefix increment
-   iterator & operator ++ ()
+   const_iterator & operator ++ ()
    {
       p++;
       return *this;
    }
 
    // postfix increment
-   iterator operator++(int postfix)
+   const_iterator operator++(const int postfix)
    {
-      iterator tmp(*this);
+      const_iterator tmp(*this);
       p++;
       return tmp;
    }
@@ -388,12 +389,12 @@ typename set<T>::iterator set<T>::find(T t) const
 	while (begining <= ending)
 	{
 		int middle = (begining + ending) / 2;
-		if (item == data[middle])
+		if (t == data[middle])
 		{
 			return middle;
 		}
 
-		else if (item < data[middle]) {
+		else if (t < data[middle]) {
 			ending = middle - 1;
 		}
 		else
