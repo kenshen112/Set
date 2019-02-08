@@ -27,7 +27,7 @@ public:
 	class const_iterator;
 
 	int size();
-	int findIndex(T item);
+	size_t findIndex(T item);
 	int resize(int numCapacity);
 	bool empty();
 	void clear();
@@ -123,10 +123,10 @@ int set<T>::size()
 *
 ***********************************************/
 template<class T>
-int set<T>::findIndex(T item)
+size_t set<T>::findIndex(T item)
 {
-	int begining = 0;
-	int ending = numElements - 1;
+	size_t begining = 0;
+	size_t ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -156,7 +156,34 @@ int set<T>::findIndex(T item)
 template<class T>
 int set<T>::resize(int numCapacity)
 {
-	return 0;
+	// do nothing if there is nothing to do
+	if (numCapacity < this->numCapacity)
+	{
+		return 0;
+	}
+	T x;
+	int s;
+	try
+	{
+		//Create new deque  
+		T *dataNew = new T[numCapacity];
+
+		for (int i = 0; i < size(); i++)
+		{
+			dataNew[i] = data[i];
+
+			x = dataNew[i];
+		}
+
+		//copy deque
+		data = dataNew;
+		//set new capacity
+		this->numCapacity = numCapacity;
+
+	}
+	catch (std::bad_alloc) {
+		throw "ERROR: Unable to allocate new buffer for deque";
+	}
 }
 
 /***********************************************
@@ -431,6 +458,7 @@ public:
 private:
    T * p;
 };
+
 /***********************************************
 *
 *
@@ -440,8 +468,8 @@ typename set<T>::iterator set<T>::find(T t) const
 {
 	iterator it;
 
-	int begining = 0;
-	int ending = numElements - 1;
+	size_t begining = 0;
+	size_t ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -514,8 +542,6 @@ typename set<T>::const_iterator set<T>::cend()
 {
 	return const_iterator(data[numElements]);
 }
-
-
 
 }
 #endif // !SET_H
