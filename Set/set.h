@@ -75,11 +75,11 @@ set<T>::set(int numCapacity)
 template<class T>
 set<T>::set(const set & rhs)
 {
-   assert(rhs.numCapacity >= 0);
+    assert(rhs.numCapacity >= 0);
 
-   if (numCapacity == rhs.numCapacity)
+   if (numCapacity == rhs.numElements)
    {
-      resize(rhs.numCapacity);
+      resize(rhs.numElements);
    }
 
    try
@@ -91,6 +91,12 @@ set<T>::set(const set & rhs)
       throw "ERROR: Unable to allocate buffer";
    }
    numCapacity = rhs.numCapacity;
+   int tempElements = rhs.numElements;
+
+   for (int i = 0; i < rhs.numElements; i++)
+   {
+      insert(rhs.data[i]);
+   }
 }
 
 /***********************
@@ -244,7 +250,7 @@ set<T> set<T>::operator || (const set <T> & rhs)
 		}
 	}
 
-	return set();
+	return setReturn;
 }
 
 /***********************************************
@@ -254,7 +260,41 @@ set<T> set<T>::operator || (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator && (const set <T> & rhs)
 {
-	return set();
+	set <T> setReturn = this;
+	int iLhs = 0;
+	int iRhs = 0;
+
+	while (iLhs < this->numElements || iRhs < rhs.numElements)
+	{
+		if (iLhs == this->numElements)
+		{
+			return setReturn;
+		}
+
+		else if (iRhs == rhs.numElements)
+		{
+			return setReturn;
+		}
+
+		else if (this->data[iLhs] == rhs.data[iRhs])
+		{
+			setReturn.insert(this->data[iLhs]);
+			iLhs++;
+			iRhs++;
+		}
+
+		else if (this->data[iLhs] < rhs.data[iRhs])
+		{
+			iLhs++;
+		}
+
+		else
+		{
+			iRhs++;
+		}
+	}
+
+	return setReturn;
 }
 
 /***********************************************
@@ -264,7 +304,24 @@ set<T> set<T>::operator && (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator=(set & rhs)
 {
-	return set();
+	if (numCapacity < rhs.numElements)
+	{
+		resize(rhs.numElements);
+	}
+	try
+	{
+		data = new T[rhs.numCapacity];
+	}
+	catch (std::bad_alloc)
+	{
+		throw "ERROR: Unable to allocate buffer";
+	}
+	numCapacity = rhs.numCapacity;
+	for (int i = 0; i < rhs.numElements; i++)
+	{
+		insert(rhs.data[i]);
+	}
+	return *this;
 }
 
 /***********************************************
