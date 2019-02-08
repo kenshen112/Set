@@ -1,11 +1,13 @@
 ﻿  assignment05.cpp
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(338): error C2059: syntax error: ')'
-  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(375): note: see reference to class template instantiation 'custom::set<T>::const_iterator' being compiled
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(338): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(375): fatal error C1903: unable to recover from previous error(s); stopping compilation
+c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2662: 'custom::set<int>::const_iterator custom::set<int>::cbegin(void)': cannot convert 'this' pointer from 'const custom::set<int>' to 'custom::set<int> &'
+  c:\users\final\source\repos\set\set\assignment05.cpp(362): note: Conversion loses qualifiers
+c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2662: 'custom::set<int>::const_iterator custom::set<int>::cend(void)': cannot convert 'this' pointer from 'const custom::set<int>' to 'custom::set<int> &'
+  c:\users\final\source\repos\set\set\assignment05.cpp(362): note: Conversion loses qualifiers
+c:\users\final\source\repos\set\set\assignment05.cpp(403): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
+  c:\users\final\source\repos\set\set\set.h(37): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\final\source\repos\set\set\assignment05.cpp(403): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
+c:\users\final\source\repos\set\set\assignment05.cpp(405): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
+  c:\users\final\source\repos\set\set\set.h(37): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\final\source\repos\set\set\assignment05.cpp(405): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
   goFish.cpp
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(338): error C2059: syntax error: ')'
-  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(375): note: see reference to class template instantiation 'custom::set<T>::const_iterator' being compiled
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(338): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
-c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(375): fatal error C1903: unable to recover from previous error(s); stopping compilation
   Generating Code...
