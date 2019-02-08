@@ -398,7 +398,7 @@ void testDifference()
          s2.insert(letter);
       }
 
-      // s1 - s2 and s2 - s1
+       s1 - s2 and s2 - s1
       set <char> sDifference;
       sDifference = s1 - s2;
       cout << "\t" << s1 << " - " << s2 << " = " << sDifference << endl;

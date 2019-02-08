@@ -27,7 +27,7 @@ public:
 	class const_iterator;
 
 	int size();
-	size_t findIndex(T item);
+	int findIndex(T item);
 	int resize(int numCapacity);
 	bool empty();
 	void clear();
@@ -144,10 +144,10 @@ int set<T>::size()
 *
 ***********************************************/
 template<class T>
-size_t set<T>::findIndex(T item)
+int set<T>::findIndex(T item)
 {
-	size_t begining = 0;
-	size_t ending = numElements - 1;
+	int begining = 0;
+	int ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -183,7 +183,7 @@ int set<T>::resize(int numCapacity)
 		return 0;
 	}
 	T x;
-	int s;
+	int s = 0;
 	try
 	{
 		//Create new deque  
@@ -264,7 +264,7 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 template<class T>
 set<T> set<T>::operator || (const set <T> & rhs)
 {
-	set <T> setReturn = this;
+	//set <T> setReturn = this;
 	int iLhs = 0;
 	int iRhs = 0;
 
@@ -272,33 +272,33 @@ set<T> set<T>::operator || (const set <T> & rhs)
 	{
 		if (iLhs == this->numElements)
 		{
-			setReturn.insert(rhs.data[iRhs++]);
+			this->insert(rhs.data[iRhs++]);
 		}
 
 		else if (iRhs == rhs.numElements)
 		{
-			setReturn.insert(this->data[iLhs++]);
+			this->insert(this->data[iLhs++]);
 		}
 
 		else if (this->data[iLhs] == rhs.data[iRhs])
 		{
-			setReturn.insert(this->data[iLhs]);
+			this->insert(this->data[iLhs]);
 			iLhs++;
 			iRhs++;
 		}
 
 		else if (this->data[iLhs] < rhs.data[iRhs])
 		{
-			setReturn.insert(this->data[iLhs++]);
+			this->insert(this->data[iLhs++]);
 		}
 
 		else
 		{
-			setReturn.insert(rhs.data[iRhs++]);
+			this->insert(rhs.data[iRhs++]);
 		}
 	}
 
-	return setReturn;
+	return this;
 }
 
 /***********************************************
@@ -357,12 +357,11 @@ set<T> set<T>::operator-(const set <T> & rhs)
 
 	for (int j = 0; j < returnSet.numElements; j++)
 	{
-
 		if (data[j] == returnSet.data[j])
 		{
 			returnSet.data[j] = data[j + 1];
+			numElements--;
 		}
-		
 	}
 
 	return returnSet;
@@ -507,8 +506,8 @@ typename set<T>::iterator set<T>::find(T t) const
 {
 	iterator it;
 
-	size_t begining = 0;
-	size_t ending = numElements - 1;
+	int begining = 0;
+	int ending = numElements - 1;
 
 	while (begining <= ending)
 	{
