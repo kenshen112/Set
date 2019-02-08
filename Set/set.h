@@ -368,28 +368,24 @@ set<T> set<T>::operator-(const set <T> & rhs)
 template <class T>
 class set <T> ::iterator
 {
-
 public:
-   // default constructor
-   iterator() : p(nullptr) {}
-
-   // initialize to direct p to some item
-   iterator(T * p) : p(p) {}
-
-   // not equals operator
-   bool operator != (const iterator & rhs) const
+   // constructors, destructors, and assignment operator
+   iterator() : p(NULL) {              }
+   iterator(T * p) : p(p) {              }
+   iterator(const iterator & rhs) { *this = rhs; }
+   iterator & operator = (const iterator & rhs)
    {
-      return rhs.p != this->p;
+      this->p = rhs.p;
+      return *this;
    }
 
-   //equals operator
-   iterator & operator= (const T & rhs);
+   // equals, not equals operator
+   bool operator != (const iterator & rhs) const { return rhs.p != this->p; }
+   bool operator == (const iterator & rhs) const { return rhs.p == this->p; }
 
    // dereference operator
-   T & operator * ()
-   {
-      return *p;
-   }
+   T & operator * () { return *p; }
+   const T & operator * () const { return *p; }
 
    // prefix increment
    iterator & operator ++ ()
@@ -399,7 +395,7 @@ public:
    }
 
    // postfix increment
-   iterator operator++(int postfix)
+   iterator operator ++ (int postfix)
    {
       iterator tmp(*this);
       p++;
@@ -415,7 +411,7 @@ private:
 *
 ***********************************************/
 template <class T>
-class set <T> :: const_iterator
+class set <T> :: const_iterator const
 {
 
 public:
