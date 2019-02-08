@@ -446,6 +446,17 @@ typename set<T>::iterator set<T>::end()
 	return iterator(data[numElements]);
 }
 
+template <class T>
+typename set<T>::const_iterator set<T>::cbegin()
+{
+	return const_iterator(data);
+}
+
+template <class T>
+typename set<T>::const_iterator set<T>::cend()
+{
+	return const_iterator(data[numElements]);
+}
 
 
 
