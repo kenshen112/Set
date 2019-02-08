@@ -35,8 +35,9 @@ public:
 	set operator|| (const set <T> & rhs);
 	set operator && (const set <T> & rhs);
 	set operator-(const set <T> & rhs);
+   //set operator != (const set <T> & rhs);
 
-	set operator=(set & rhs)
+	set<T> & operator=(set<T> & rhs)
 	{
 		if (numCapacity < rhs.numElements)
 		{
@@ -63,8 +64,8 @@ public:
 	iterator erase(iterator it);
 	iterator begin();
 	iterator end();
-	const_iterator cend();
-	const_iterator cbegin();
+	const_iterator cend()  const;
+	const_iterator cbegin() const;
 };
 
 /*************************
@@ -417,9 +418,45 @@ private:
 *
 ***********************************************/
 template <class T>
-class set <T> :: const_iterator const
+class set <T> :: const_iterator
 {
+public:
+   // constructors, destructors, and assignment operator
+   const_iterator() : p(NULL) {              }
+   const_iterator(T * p) : p(p) {              }
+   const_iterator(const iterator & rhs) { *this = rhs; }
+   const_iterator & operator = (const iterator & rhs)
+   {
+      this->p = rhs.p;
+      return *this;
+   }
 
+   // equals, not equals operator
+   bool operator != (const iterator & rhs) const { return rhs.p != this->p; }
+   bool operator == (const iterator & rhs) const { return rhs.p == this->p; }
+
+   // dereference operator
+   T & operator * () { return *p; }
+   const T & operator * () const { return *p; }
+
+   // prefix increment
+   const_iterator & operator ++ ()
+   {
+      p++;
+      return *this;
+   }
+
+   // postfix increment
+   const_iterator operator ++ (int postfix)
+   {
+      iterator tmp(*this);
+      p++;
+      return tmp;
+   }
+
+private:
+   T * p;
+/*
 public:
    // default constructor
    const_iterator() : p(nullptr) {}
@@ -458,7 +495,7 @@ public:
    }
 
 private:
-   T * p;
+   T * p;*/
 };
 
 /***********************************************
@@ -534,13 +571,13 @@ typename set<T>::iterator set<T>::end()
 }
 
 template <class T>
-typename set<T>::const_iterator set<T>::cbegin()
+typename set<T>::const_iterator set<T>::cbegin() const
 {
 	return const_iterator(data);
 }
 
 template <class T>
-typename set<T>::const_iterator set<T>::cend()
+typename set<T>::const_iterator set<T>::cend() const
 {
 	return const_iterator(data[numElements]);
 }
