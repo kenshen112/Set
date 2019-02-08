@@ -1,123 +1,169 @@
 ﻿  assignment05.cpp
-c:\users\final\source\repos\set\set\set.h(64): error C2427: 'iterator': cannot define class in this scope
-  c:\users\final\source\repos\set\set\set.h(63): note: see declaration of 'iterator'
-  c:\users\final\source\repos\set\set\set.h(118): note: see reference to class template instantiation 'custom::set<T>' being compiled
-c:\users\final\source\repos\set\set\set.h(64): error C2911: 'iterator': cannot be declared or defined in the current scope
-c:\users\final\source\repos\set\set\set.h(64): error C2649: 'custom::set<`template-type-parameter-1'>::iterator': is not a 'class'
-c:\users\final\source\repos\set\set\set.h(173): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(176): error C3861: 'insertIndex': identifier not found
-c:\users\final\source\repos\set\set\set.h(176): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(177): error C3861: 'numItems': identifier not found
-c:\users\final\source\repos\set\set\set.h(189): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(222): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(222): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(222): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(223): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(223): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(228): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(228): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(228): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(229): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(229): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(234): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(234): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(234): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(235): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(235): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(240): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(240): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(240): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(241): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(241): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\assignment05.cpp(65): error C2065: 'choice': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(66): error C2065: 'choice': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(67): error C2050: switch expression not integral
-c:\users\final\source\repos\set\set\assignment05.cpp(69): error C3861: 'goFish': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(72): error C3861: 'testSimple': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(76): error C3861: 'testFill': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(80): error C3861: 'testFind': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(84): error C3861: 'testUnionIntersection': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(88): error C3861: 'testConstIterator': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(92): error C3861: 'testDifference': identifier not found
-c:\users\final\source\repos\set\set\assignment05.cpp(114): error C2065: 's1': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(115): error C2065: 's1': undeclared identifier
-c:\users\final\source\repos\set\set\set.h(63): error C4596: 'iterator': illegal qualified name in member declaration
-  c:\users\final\source\repos\set\set\assignment05.cpp(119): note: see reference to class template instantiation 'custom::set<double>' being compiled
-c:\users\final\source\repos\set\set\set.h(110): error C2460: 'custom::set<double>::iterator': uses 'custom::set<double>', which is being defined
-  c:\users\final\source\repos\set\set\assignment05.cpp(119): note: see declaration of 'custom::set<double>'
-c:\users\final\source\repos\set\set\set.h(110): error C2460: 'custom::set<int>::iterator': uses 'custom::set<int>', which is being defined
-  c:\users\final\source\repos\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
-c:\users\final\source\repos\set\set\set.h(110): error C2460: 'custom::set<std::string>::iterator': uses 'custom::set<std::string>', which is being defined
-  c:\users\final\source\repos\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
-c:\users\final\source\repos\set\set\assignment05.cpp(257): error C2146: syntax error: missing ';' before identifier 'itEmpty'
-c:\users\final\source\repos\set\set\assignment05.cpp(257): error C2597: illegal reference to non-static member 'custom::set<std::string>::iterator'
-  c:\users\final\source\repos\set\set\assignment05.cpp(257): note: see declaration of 'custom::set<std::string>::iterator'
-c:\users\final\source\repos\set\set\assignment05.cpp(257): error C2065: 'itEmpty': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(257): error C2039: 'end': is not a member of 'custom::set<std::string>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
-c:\users\final\source\repos\set\set\assignment05.cpp(258): error C2146: syntax error: missing ';' before identifier 'itFind'
-c:\users\final\source\repos\set\set\assignment05.cpp(258): error C2597: illegal reference to non-static member 'custom::set<std::string>::iterator'
-  c:\users\final\source\repos\set\set\assignment05.cpp(258): note: see declaration of 'custom::set<std::string>::iterator'
-c:\users\final\source\repos\set\set\assignment05.cpp(258): error C2065: 'itFind': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(258): error C2039: 'find': is not a member of 'custom::set<std::string>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
-c:\users\final\source\repos\set\set\assignment05.cpp(259): error C2065: 'itFind': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(259): error C2065: 'itEmpty': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(262): error C2039: 'erase': is not a member of 'custom::set<std::string>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
-c:\users\final\source\repos\set\set\assignment05.cpp(262): error C2065: 'itFind': undeclared identifier
-c:\users\final\source\repos\set\set\set.h(110): error C2460: 'custom::set<float>::iterator': uses 'custom::set<float>', which is being defined
-  c:\users\final\source\repos\set\set\assignment05.cpp(302): note: see declaration of 'custom::set<float>'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2039: 'const_iterator': is not a member of 'custom::set<int>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2065: 'const_iterator': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2146: syntax error: missing ';' before identifier 'it'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2143: syntax error: missing ';' before '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2143: syntax error: missing ')' before '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2059: syntax error: '='
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2065: 'it': undeclared identifier
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2039: 'cend': is not a member of 'custom::set<int>'
-  c:\users\final\source\repos\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
-c:\users\final\source\repos\set\set\assignment05.cpp(362): error C2059: syntax error: ')'
-c:\users\final\source\repos\set\set\assignment05.cpp(363): error C2146: syntax error: missing ';' before identifier 'cout'
-c:\users\final\source\repos\set\set\assignment05.cpp(363): error C2065: 'it': undeclared identifier
-c:\users\final\source\repos\set\set\set.h(110): error C2460: 'custom::set<char>::iterator': uses 'custom::set<char>', which is being defined
-  c:\users\final\source\repos\set\set\assignment05.cpp(382): note: see declaration of 'custom::set<char>'
-c:\users\final\source\repos\set\set\assignment05.cpp(403): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(60): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
-  c:\users\final\source\repos\set\set\assignment05.cpp(403): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
-c:\users\final\source\repos\set\set\assignment05.cpp(405): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
-  c:\users\final\source\repos\set\set\set.h(60): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
-  c:\users\final\source\repos\set\set\assignment05.cpp(405): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2427: 'iterator': cannot define class in this scope
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(63): note: see declaration of 'iterator'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(116): note: see reference to class template instantiation 'custom::set<T>' being compiled
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2911: 'iterator': cannot be declared or defined in the current scope
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2649: 'custom::set<`template-type-parameter-1'>::iterator': is not a 'class'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C3646: 'find': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C3646: 'erase': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C3646: 'begin': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C3646: 'end': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(171): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(174): error C3861: 'insertIndex': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(174): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(175): error C3861: 'numItems': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(187): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(221): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(221): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(227): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(227): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(233): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(233): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(239): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(239): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(65): error C2065: 'choice': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(66): error C2065: 'choice': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(67): error C2050: switch expression not integral
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(69): error C3861: 'goFish': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(72): error C3861: 'testSimple': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(76): error C3861: 'testFill': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(80): error C3861: 'testFind': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(84): error C3861: 'testUnionIntersection': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(88): error C3861: 'testConstIterator': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(92): error C3861: 'testDifference': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(114): error C2065: 's1': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(115): error C2065: 's1': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(63): error C4596: 'iterator': illegal qualified name in member declaration
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(119): note: see reference to class template instantiation 'custom::set<double>' being compiled
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(105): error C2460: 'custom::set<double>::iterator': uses 'custom::set<double>', which is being defined
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(119): note: see declaration of 'custom::set<double>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2327: 'custom::set<double>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2327: 'custom::set<double>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2327: 'custom::set<double>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2327: 'custom::set<double>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(105): error C2460: 'custom::set<int>::iterator': uses 'custom::set<int>', which is being defined
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2327: 'custom::set<int>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2327: 'custom::set<int>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2327: 'custom::set<int>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2327: 'custom::set<int>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(105): error C2460: 'custom::set<std::string>::iterator': uses 'custom::set<std::string>', which is being defined
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2327: 'custom::set<std::string>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2327: 'custom::set<std::string>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2327: 'custom::set<std::string>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2327: 'custom::set<std::string>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(257): error C2146: syntax error: missing ';' before identifier 'itEmpty'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(257): error C2597: illegal reference to non-static member 'custom::set<std::string>::iterator'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(257): note: see declaration of 'custom::set<std::string>::iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(257): error C2065: 'itEmpty': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(257): error C2039: 'end': is not a member of 'custom::set<std::string>'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(258): error C2146: syntax error: missing ';' before identifier 'itFind'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(258): error C2597: illegal reference to non-static member 'custom::set<std::string>::iterator'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(258): note: see declaration of 'custom::set<std::string>::iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(258): error C2065: 'itFind': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(258): error C2039: 'find': is not a member of 'custom::set<std::string>'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(259): error C2065: 'itFind': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(259): error C2065: 'itEmpty': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(262): error C2039: 'erase': is not a member of 'custom::set<std::string>'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(232): note: see declaration of 'custom::set<std::string>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(262): error C2065: 'itFind': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(105): error C2460: 'custom::set<float>::iterator': uses 'custom::set<float>', which is being defined
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(302): note: see declaration of 'custom::set<float>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2327: 'custom::set<float>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2327: 'custom::set<float>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2327: 'custom::set<float>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2327: 'custom::set<float>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2039: 'const_iterator': is not a member of 'custom::set<int>'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2065: 'const_iterator': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2146: syntax error: missing ';' before identifier 'it'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2143: syntax error: missing ';' before '='
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2143: syntax error: missing ')' before '='
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2059: syntax error: '='
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2065: 'it': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2039: 'cend': is not a member of 'custom::set<int>'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(177): note: see declaration of 'custom::set<int>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(362): error C2059: syntax error: ')'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(363): error C2146: syntax error: missing ';' before identifier 'cout'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(363): error C2065: 'it': undeclared identifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(105): error C2460: 'custom::set<char>::iterator': uses 'custom::set<char>', which is being defined
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(382): note: see declaration of 'custom::set<char>'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2327: 'custom::set<char>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2327: 'custom::set<char>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2327: 'custom::set<char>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2327: 'custom::set<char>::iterator': is not a type name, static, or enumerator
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(403): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(60): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(403): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
+c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(405): error C2679: binary '=': no operator found which takes a right-hand operand of type 'custom::set<char>' (or there is no acceptable conversion)
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(60): note: could be 'custom::set<char> custom::set<char>::operator =(custom::set<char> &)'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\assignment05.cpp(405): note: while trying to match the argument list '(custom::set<char>, custom::set<char>)'
+  card.cpp
+  cardTest.cpp
   goFish.cpp
-c:\users\final\source\repos\set\set\set.h(64): error C2427: 'iterator': cannot define class in this scope
-  c:\users\final\source\repos\set\set\set.h(63): note: see declaration of 'iterator'
-  c:\users\final\source\repos\set\set\set.h(118): note: see reference to class template instantiation 'custom::set<T>' being compiled
-c:\users\final\source\repos\set\set\set.h(64): error C2911: 'iterator': cannot be declared or defined in the current scope
-c:\users\final\source\repos\set\set\set.h(64): error C2649: 'custom::set<`template-type-parameter-1'>::iterator': is not a 'class'
-c:\users\final\source\repos\set\set\set.h(173): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(176): error C3861: 'insertIndex': identifier not found
-c:\users\final\source\repos\set\set\set.h(176): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(177): error C3861: 'numItems': identifier not found
-c:\users\final\source\repos\set\set\set.h(189): error C3861: 'item': identifier not found
-c:\users\final\source\repos\set\set\set.h(222): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(222): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(222): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(223): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(223): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(228): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(228): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(228): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(229): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(229): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(234): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(234): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(234): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(235): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(235): error C2447: '{': missing function header (old-style formal list?)
-c:\users\final\source\repos\set\set\set.h(240): warning C4346: 'iterator': dependent name is not a type
-  c:\users\final\source\repos\set\set\set.h(240): note: prefix with 'typename' to indicate a type
-c:\users\final\source\repos\set\set\set.h(240): error C2061: syntax error: identifier 'iterator'
-c:\users\final\source\repos\set\set\set.h(241): error C2143: syntax error: missing ';' before '{'
-c:\users\final\source\repos\set\set\set.h(241): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2427: 'iterator': cannot define class in this scope
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(63): note: see declaration of 'iterator'
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(116): note: see reference to class template instantiation 'custom::set<T>' being compiled
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2911: 'iterator': cannot be declared or defined in the current scope
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(64): error C2649: 'custom::set<`template-type-parameter-1'>::iterator': is not a 'class'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C3646: 'find': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(107): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C3646: 'erase': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(108): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C3646: 'begin': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(109): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C3646: 'end': unknown override specifier
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2059: syntax error: '('
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(110): error C2238: unexpected token(s) preceding ';'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(171): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(174): error C3861: 'insertIndex': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(174): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(175): error C3861: 'numItems': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(187): error C3861: 'item': identifier not found
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(220): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(221): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(221): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(226): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(227): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(227): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(232): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(233): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(233): error C2447: '{': missing function header (old-style formal list?)
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): warning C4346: 'iterator': dependent name is not a type
+  c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): note: prefix with 'typename' to indicate a type
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(238): error C2061: syntax error: identifier 'iterator'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(239): error C2143: syntax error: missing ';' before '{'
+c:\users\kenyon b\source\repos\kenshen112\set\set\set.h(239): error C2447: '{': missing function header (old-style formal list?)
   Generating Code...
