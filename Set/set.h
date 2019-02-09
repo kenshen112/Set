@@ -276,6 +276,9 @@ template<class T>
 void set<T>::insert(const T & t) // this is from my first attempt it kindaish works, a good start none the less
 {
 	int ifFound = findIndex(t);
+
+	std::cout << "Find: " << ifFound << std::endl;
+
 	if (ifFound == 0)
 	{
 		numCapacity = 1;
@@ -507,7 +510,6 @@ private:
 template<class T>
 typename set<T>::iterator set<T>::find(const T & t)
 {
-
 	int begining = 0;
 	int ending = numElements - 1;
 
@@ -516,10 +518,10 @@ typename set<T>::iterator set<T>::find(const T & t)
 		int middle = (begining + ending) / 2;
 		if (t == data[middle])
 		{
-			return set<T> :: iterator (data + (middle - 1));
+			return set<T> ::iterator(data + (middle - 1));
 		}
 
-		else if (t < data[middle]) {
+		if (t < data[middle]) {
 			ending = middle - 1;
 		}
 		else
