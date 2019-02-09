@@ -202,7 +202,7 @@ int set<T>::findIndex(const T item) const
 
 	}
 
-	return begining;
+	return numElements;
 }
 
 /***********************************************
@@ -215,6 +215,8 @@ void set<T>::resize(int capacityNew)
 	// do nothing if there is nothing to do
 	if (capacityNew < numCapacity)
 	{
+		std::cerr << "return" << std::endl;
+
 		return;
 	}
 
@@ -227,14 +229,24 @@ void set<T>::resize(int capacityNew)
 		for (int i = 0; i < numElements; i++)
 		{
 			dataNew[i] = data[i];
-	
+			std:: cerr << "Data: " << data[i] << std::endl;
+
 		}
+
+		std::cerr << "Before delete" << std::endl;
+
+		delete[] data;
 
 		//copy set
 		data = dataNew;
 
+		std::cerr << "Copy correct" << std::endl;
+
 		//set new capacity
 		numCapacity = capacityNew;
+
+		std::cerr << "Resized correctly" << std::endl;
+
 	}
    //Error
 	catch (std::bad_alloc) {
@@ -283,26 +295,27 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 
 	std::cerr << "Find: " << ifFound << std::endl;
 
-	if (ifFound == 0)
+	if (numCapacity == 0)
 	{
-		/*numCapacity = 1;
-		data = new T[numCapacity];*/
-
-		resize(1); 
-
+		numCapacity = 1;
+		data = new T[numCapacity];
 		data[numElements] = t;
 		numElements++;
+		//resize(1); 
 	}
 
-	if (numElements == numCapacity)
+	if (size() == numCapacity)
 	{
+		std::cerr << "Capacity Resize" << std::endl;
+
 		resize(numCapacity * 2);
 	}
-	else if (t != data[ifFound])
+	 
+	if (t != data[ifFound])
 	{
 		for (int i = numElements; i > 0; i--) // The order of the items in Set
 		{
-			data[i + 1] = data[i];
+			data[i + 1] = data[i];// unallocated memory
 			data[ifFound] = t;
 		}
 
