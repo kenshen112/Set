@@ -212,7 +212,7 @@ int set<T>::resize(int Capacity)
 
 		for (int i = 0; i < numElements; i++)
 		{
-			insert(dataNew[i]);
+			dataNew[i] = data[i];
 	
 		}
 
