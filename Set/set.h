@@ -65,7 +65,7 @@ public:
 	bool operator ==(const iterator & rhs) { return rhs == *this; }
 
 
-	iterator find(T t) const;
+   iterator find(const T & t);
 	iterator erase(set <T> ::iterator & it);
 	iterator begin();
 	iterator end();
@@ -467,7 +467,7 @@ private:
 *
 ***********************************************/
 template<class T>
-typename set<T>::iterator set<T>::find(T t) const
+typename set<T>::iterator set<T>::find(const T & t)
 {
 
 	int begining = 0;
