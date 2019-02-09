@@ -12,6 +12,8 @@
 
 #include <iostream>
 #include <cassert>
+using std::cout;
+using std::endl;
 
 namespace custom
 {
@@ -184,8 +186,7 @@ int set<T>::findIndex(const T item) const
 	while (begining <= ending)
 	{
 
-	int middle = (begining + ending) / 2;
-
+	   int middle = (begining + ending) / 2;
 
 		if (item == data[middle])
 		{
@@ -285,9 +286,6 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 
 	if (numCapacity == 0)
 	{
-		//numCapacity = 1;
-		//data = new T[numCapacity];
-
 		resize(1); 
 
 		data[numElements] = t;
@@ -301,10 +299,13 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 
 	if (data[ifFound] != t )
 	{
-		for (int i = numElements; i < ifFound; i--) // The order of the items in Set
+
+      for (int i = numElements; i < ifFound; i--) // The order of the items in Set
 		{
 			data[i + 1] = data[i];
+         std::cout << "Data: " << data[i] << ", ";
 		}
+      cout << endl;
       data[ifFound] = t;
 		numElements++;
 	}
