@@ -103,6 +103,12 @@ set<T>::set(const set & rhs)
 {
     assert(rhs.numCapacity >= 0);
 
+	if (numCapacity == 0)
+	{
+		resize(1);
+	}
+
+
    if (numCapacity == rhs.numElements)
    {
       resize(rhs.numElements);
@@ -180,10 +186,10 @@ int set<T>::findIndex(const T item) const
 *
 ***********************************************/
 template<class T>
-int set<T>::resize(int numCapacity)
+int set<T>::resize(int Capacity)
 {
 	// do nothing if there is nothing to do
-	if (numCapacity < this->numCapacity)
+	if (Capacity < numCapacity)
 	{
 		return 0;
 	}
@@ -192,9 +198,9 @@ int set<T>::resize(int numCapacity)
 	try
 	{
 		//Create new deque  
-		T *dataNew = new T[numCapacity];
+		T *dataNew = new T[Capacity];
 
-		for (int i = 0; i < size(); i++)
+		for (int i = 0; i < numElements; i++)
 		{
 			dataNew[i] = data[i];
 
@@ -204,8 +210,8 @@ int set<T>::resize(int numCapacity)
 		//copy deque
 		data = dataNew;
 		//set new capacity
-		this->numCapacity = numCapacity;
-
+		numCapacity = Capacity;
+		std::cout << "Resize worked" << std::endl;
 	}
 	catch (std::bad_alloc) {
 		throw "ERROR: Unable to allocate new buffer for deque";
@@ -241,6 +247,9 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 	int ifFound = findIndex(t);
 	if (ifFound == 0)
 	{
+		numCapacity = 1;
+		data = new T[numCapacity];
+
 		data[numElements] = t;
 		numElements++;
 	}
@@ -501,7 +510,7 @@ typename set<T>::iterator set<T>::find(const T & t)
 template<class T>
 typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 {
-	int iErase = find(it);
+	/*int iErase = find(it);
 	if (data[iErase] == it)
 	{
 		for (int i = iErase; i < numElements; i++)
@@ -510,7 +519,9 @@ typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 		}
 		numElements--;
 
-	}
+	}*/
+
+	return it;
 }
 
 /***********************************************
