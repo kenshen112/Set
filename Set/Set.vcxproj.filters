@@ -38,9 +38,6 @@
     <ClCompile Include="card.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cardTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="goFish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
