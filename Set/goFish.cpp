@@ -8,8 +8,7 @@
 
 #include <iostream>
 
-//#include "set.h"
-#include <set>
+#include "set.h"
 #include "card.h"
 #include "goFish.h"
 #include <string.h>
@@ -22,8 +21,8 @@ using std::endl;
 using std::string;
 using std::ostream;
 using std::ios;
-using std::set;  //For testing goFish. DIsable before submition
 using std::ifstream;
+using namespace custom;
 
 /**********************************************************************
  * GO FISH

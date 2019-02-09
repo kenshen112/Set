@@ -10,8 +10,8 @@
 #ifndef GO_FISH_H
 #define GO_FISH_H
 #include "card.h"
-#include <set>
-using std::set;  //For testing goFish. DIsable before submition
+#include "set.h"
+using namespace custom;
 
 //prototype functions
 void goFish();                         //Main Game
