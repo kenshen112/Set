@@ -202,7 +202,7 @@ int set<T>::findIndex(const T item) const
 
 	}
 
-	return numElements;
+	return begining;
 }
 
 /***********************************************
