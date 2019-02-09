@@ -27,7 +27,7 @@ public:
 	class const_iterator;
 
 	int size();
-	size_t findIndex(T item);
+	int findIndex(const T item) const; 
 	int resize(int numCapacity);
 	bool empty();
 	void clear();
@@ -36,6 +36,8 @@ public:
 	set operator && (const set <T> & rhs);
 	set operator-(const set <T> & rhs);
    //set operator != (const set <T> & rhs);
+
+	bool operator ==(const set & rhs) { return rhs == *this; }
 
 	set<T> & operator=(set<T> & rhs)
 	{
@@ -59,9 +61,12 @@ public:
 
 		return *this;
 	}
-		
+	
+	bool operator ==(const iterator & rhs) { return rhs == *this; }
+
+
 	iterator find(T t) const;
-	iterator erase(iterator it);
+	iterator erase(set <T> ::iterator & it);
 	iterator begin();
 	iterator end();
 	const_iterator cend()  const;
@@ -144,10 +149,10 @@ int set<T>::size()
 *
 ***********************************************/
 template<class T>
-size_t set<T>::findIndex(T item)
+int set<T>::findIndex(const T item) const
 {
-	size_t begining = 0;
-	size_t ending = numElements - 1;
+	int begining = 0;
+	int ending = numElements - 1;
 
 	while (begining <= ending)
 	{
@@ -183,7 +188,7 @@ int set<T>::resize(int numCapacity)
 		return 0;
 	}
 	T x;
-	int s;
+	int s = 0;
 	try
 	{
 		//Create new deque  
@@ -264,7 +269,7 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 template<class T>
 set<T> set<T>::operator || (const set <T> & rhs)
 {
-	set <T> setReturn = this;
+	//set <T> setReturn = this;
 	int iLhs = 0;
 	int iRhs = 0;
 
@@ -272,33 +277,33 @@ set<T> set<T>::operator || (const set <T> & rhs)
 	{
 		if (iLhs == this->numElements)
 		{
-			setReturn.insert(rhs.data[iRhs++]);
+			this->insert(rhs.data[iRhs++]);
 		}
 
 		else if (iRhs == rhs.numElements)
 		{
-			setReturn.insert(this->data[iLhs++]);
+			this->insert(this->data[iLhs++]);
 		}
 
 		else if (this->data[iLhs] == rhs.data[iRhs])
 		{
-			setReturn.insert(this->data[iLhs]);
+			this->insert(this->data[iLhs]);
 			iLhs++;
 			iRhs++;
 		}
 
 		else if (this->data[iLhs] < rhs.data[iRhs])
 		{
-			setReturn.insert(this->data[iLhs++]);
+			this->insert(this->data[iLhs++]);
 		}
 
 		else
 		{
-			setReturn.insert(rhs.data[iRhs++]);
+			this->insert(rhs.data[iRhs++]);
 		}
 	}
 
-	return setReturn;
+	return *this;
 }
 
 /***********************************************
@@ -308,7 +313,7 @@ set<T> set<T>::operator || (const set <T> & rhs)
 template<class T>
 set<T> set<T>::operator && (const set <T> & rhs)
 {
-	set <T> setReturn = this;
+	set <T> setReturn = *this;
 	int iLhs = 0;
 	int iRhs = 0;
 
@@ -351,18 +356,16 @@ set<T> set<T>::operator && (const set <T> & rhs)
 *
 ***********************************************/
 template<class T>
-set<T> set<T>::operator-(const set <T> & rhs)
+set<T> set<T>::operator-(const set <T> & rhs) //only return objects that are in one set not the other.
 {
-	set <T> returnSet = rhs;
+	set <T> returnSet = set<T>();
 
-	for (int j = 0; j < returnSet.numElements; j++)
+	for (int i = 0; i < rhs.numElements; i++)
 	{
-
-		if (data[j] == returnSet.data[j])
+		if (rhs.data[i] != this->data[i])
 		{
-			returnSet.data[j] = data[j + 1];
+			returnSet.insert(rhs.data[i]);
 		}
-		
 	}
 
 	return returnSet;
@@ -418,14 +421,14 @@ private:
 *
 ***********************************************/
 template <class T>
-class set <T> :: const_iterator
+class set <T> :: const_iterator 
 {
 public:
    // constructors, destructors, and assignment operator
    const_iterator() : p(NULL) {              }
    const_iterator(T * p) : p(p) {              }
    const_iterator(const iterator & rhs) { *this = rhs; }
-   const_iterator & operator = (const iterator & rhs)
+   const_iterator & operator = (const iterator & rhs) const
    {
       this->p = rhs.p;
       return *this;
@@ -456,46 +459,7 @@ public:
 
 private:
    T * p;
-/*
-public:
-   // default constructor
-   const_iterator() : p(nullptr) {}
 
-   // initialize to direct p to some item
-   const_iterator(T * p) : p(p) {}
-
-   // not equals operator
-   bool operator != (const iterator & rhs) const
-   {
-      return rhs.p != this->p;
-   }
-
-   //equals operator
-   iterator & operator= (const T & rhs);
-
-   // dereference operator
-   T & operator * ()
-   {
-      return *p;
-   }
-
-   // prefix increment
-   const_iterator & operator ++ ()
-   {
-      p++;
-      return *this;
-   }
-
-   // postfix increment
-   const_iterator operator++(const int postfix)
-   {
-      const_iterator tmp(*this);
-      p++;
-      return tmp;
-   }
-
-private:
-   T * p;*/
 };
 
 /***********************************************
@@ -505,17 +469,16 @@ private:
 template<class T>
 typename set<T>::iterator set<T>::find(T t) const
 {
-	iterator it;
 
-	size_t begining = 0;
-	size_t ending = numElements - 1;
+	int begining = 0;
+	int ending = numElements - 1;
 
 	while (begining <= ending)
 	{
 		int middle = (begining + ending) / 2;
 		if (t == data[middle])
 		{
-			return middle;
+			return set<T> :: iterator (data + (middle - 1));
 		}
 
 		else if (t < data[middle]) {
@@ -528,7 +491,7 @@ typename set<T>::iterator set<T>::find(T t) const
 
 	}
 
-	return it(data[numElements]);
+	return set <T> ::iterator (&data[numElements]);
 }
 
 /***********************************************
@@ -536,9 +499,9 @@ typename set<T>::iterator set<T>::find(T t) const
 *
 ***********************************************/
 template<class T>
-typename set<T>::iterator set<T>::erase(iterator it)
+typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 {
-	int iErase = findIndex(it);
+	int iErase = find(it);
 	if (data[iErase] == it)
 	{
 		for (int i = iErase; i < numElements; i++)
@@ -557,7 +520,7 @@ typename set<T>::iterator set<T>::erase(iterator it)
 template<class T>
 typename set<T>::iterator set<T>::begin()
 {
-	return iterator(data);
+	return set<T> :: iterator(data);
 }
 
 /***********************************************
@@ -567,19 +530,19 @@ typename set<T>::iterator set<T>::begin()
 template<class T>
 typename set<T>::iterator set<T>::end()
 {
-	return iterator(data[numElements]);
+	return set<T> :: iterator(&data[numElements]);
 }
 
 template <class T>
 typename set<T>::const_iterator set<T>::cbegin() const
 {
-	return const_iterator(data);
+	return set<T> :: const_iterator(data);
 }
 
 template <class T>
 typename set<T>::const_iterator set<T>::cend() const
 {
-	return const_iterator(data[numElements]);
+	return set<T> :: const_iterator(&data[numElements]);
 }
 
 }
