@@ -120,7 +120,6 @@ set<T>::set(const set & rhs)
 		resize(1);
 	}
 
-
    if (numCapacity == rhs.numElements)
    {
       resize(rhs.numElements);
