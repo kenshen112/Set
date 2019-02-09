@@ -280,14 +280,14 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 {
 	int ifFound = findIndex(t);
 
-	std::cout << "Find: " << ifFound << std::endl;
+	std::cerr << "Find: " << ifFound << std::endl;
 
 	if (ifFound == 0)
 	{
-		numCapacity = 1;
-		data = new T[numCapacity];
+		/*numCapacity = 1;
+		data = new T[numCapacity];*/
 
-		//resize(1); segfaults
+		resize(1); 
 
 		data[numElements] = t;
 		numElements++;
