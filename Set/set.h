@@ -88,11 +88,11 @@ set<T>::set()
 * Non Default Constrctor
 ********************************/
 template<class T>
-set<T>::set(int numCapacity)
+set<T>::set(int Capacity)
 {
    data = nullptr;
    numElements = 0;
-   this->numCapacity = numCapacity;
+   numCapacity = Capacity;
 }
 
 /***********************
@@ -193,7 +193,6 @@ int set<T>::resize(int Capacity)
 	{
 		return 0;
 	}
-	T x;
 	int s = 0;
 	try
 	{
@@ -202,9 +201,8 @@ int set<T>::resize(int Capacity)
 
 		for (int i = 0; i < numElements; i++)
 		{
-			dataNew[i] = data[i];
-
-			x = dataNew[i];
+			insert(dataNew[i]);
+	
 		}
 
 		//copy deque
@@ -247,8 +245,10 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 	int ifFound = findIndex(t);
 	if (ifFound == 0)
 	{
-		numCapacity = 1;
-		data = new T[numCapacity];
+		/*numCapacity = 1;
+		data = new T[numCapacity];*/
+
+		resize(1);
 
 		data[numElements] = t;
 		numElements++;
