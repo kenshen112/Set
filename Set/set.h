@@ -193,8 +193,9 @@ int set<T>::findIndex(const T item) const
 			return middle;
 		}
 
-		if (item < data[middle]) {
+		else if (item < data[middle]) {
 			ending = middle - 1;
+         return ending + 1;
 		}
 		else
 		{
@@ -300,12 +301,11 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 	if (data[ifFound] != t )
 	{
 
-      for (int i = numElements; i < ifFound; i--) // The order of the items in Set
+      for (int i = numElements; i >= ifFound; --i) // The order of the items in Set
 		{
 			data[i + 1] = data[i];
-         std::cout << "Data: " << data[i] << ", ";
 		}
-      cout << endl;
+
       data[ifFound] = t;
 		numElements++;
 	}
