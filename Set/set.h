@@ -283,15 +283,15 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 
 	std::cerr << "Find: " << ifFound << std::endl;
 
-	if (ifFound == 0)
+	if (numCapacity == 0)
 	{
-		/*numCapacity = 1;
-		data = new T[numCapacity];*/
+		//numCapacity = 1;
+		//data = new T[numCapacity];
 
 		resize(1); 
 
 		data[numElements] = t;
-		numElements++;
+	   numElements++;
 	}
 
 	if (numElements == numCapacity)
