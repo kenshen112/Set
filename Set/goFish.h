@@ -2,9 +2,9 @@
 * Header:
 *    Go Fish
 * Summary:
-*    This will contain just the prototype for the goFish() function
+*    This will contains the prototypes for the functions to play go fish
 * Author
-*    <your names here>
+*    Kenyon Bunker and Tim O'Barr
 ************************************************************************/
 
 #ifndef GO_FISH_H

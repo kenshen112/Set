@@ -1,3 +1,12 @@
+/***********************************************************************
+* Header:
+*    Set
+* Summary:
+*    A custom Set class
+* Author
+*    Kenyon Bunker and Tim O'Barr
+************************************************************************/
+
 #ifndef SET_H
 #define SET_H
 
@@ -16,13 +25,13 @@ private:
 	int numElements;
 	int numCapacity;
 
-
 public:
    set();
    set(int numCapacity);
    set(const set& rhs);
    ~set();
 
+   //iterators
 	class iterator;
 	class const_iterator;
 
@@ -32,13 +41,16 @@ public:
 	bool empty();
 	void clear();
 	void  insert(const T & t);
+
+   //Overloaded operators
 	set operator|| (const set <T> & rhs);
 	set operator && (const set <T> & rhs);
 	set operator-(const set <T> & rhs);
-   //set operator != (const set <T> & rhs);
-
 	bool operator ==(const set & rhs) { return rhs == *this; }
 
+   /********************************************
+   * ASSIGNMENT OPERATOR
+   *******************************************/
 	set<T> & operator=(set<T> & rhs)
 	{
 		if (numCapacity < rhs.numElements)
@@ -64,7 +76,7 @@ public:
 	
 	bool operator ==(const iterator & rhs) { return rhs == *this; }
 
-
+   //iterorator functions
    iterator find(const T & t);
 	iterator erase(set <T> ::iterator & it);
 	iterator begin();
@@ -141,8 +153,8 @@ inline set<T>::~set()
 }
 
 /***********************************************
-*
-*
+* SET : SIZE
+* calculates size of set
 ***********************************************/
 template<class T>
 int set<T>::size()
@@ -151,8 +163,8 @@ int set<T>::size()
 }
 
 /***********************************************
-*
-*
+* SET : FINDINDEX
+* Finds the index of set
 ***********************************************/
 template<class T>
 int set<T>::findIndex(const T item) const
@@ -182,8 +194,8 @@ int set<T>::findIndex(const T item) const
 }
 
 /***********************************************
-*
-*
+* SET : RESIZE
+* Resizes set when it becomes full
 ***********************************************/
 template<class T>
 int set<T>::resize(int Capacity)
@@ -197,7 +209,7 @@ int set<T>::resize(int Capacity)
 	int s = 0;
 	try
 	{
-		//Create new deque  
+		//Create new set  
 		T *dataNew = new T[Capacity];
 
 		for (int i = 0; i < numElements; i++)
@@ -207,39 +219,52 @@ int set<T>::resize(int Capacity)
 			x = dataNew[i];
 		}
 
-		//copy deque
+		//copy set
 		data = dataNew;
+
 		//set new capacity
 		numCapacity = Capacity;
 		std::cout << "Resize worked" << std::endl;
 	}
+   //Error
 	catch (std::bad_alloc) {
 		throw "ERROR: Unable to allocate new buffer for deque";
 	}
 }
 
 /***********************************************
-*
-*
+* SET : EMPTY
+* determines if the set is empty
 ***********************************************/
 template<class T>
 bool set<T>::empty()
 {
-	return numCapacity == 0;
+   if (size() <= 0)
+   {
+      return true;
+   }
+   else
+   {
+      return false;
+   }
 }
 
 /***********************************************
-*
-*
+* Set : CLEAR
+* Clears the set
 ***********************************************/
 template<class T>
 void set<T>::clear()
 {
+   data = NULL;
+   delete[] data;
+   numCapacity = 0;
+   numElements = 0;
 }
 
 /***********************************************
-*
-*
+* SET : INSERT
+* Inserts the data into the set
 ***********************************************/
 template<class T>
 void set<T>::insert(const T & t) // this is from my first attempt it kindaish works, a good start none the less
@@ -272,8 +297,7 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 }
 
 /***********************************************
-*
-*
+* SET : UNION OPERATOR
 ***********************************************/
 template<class T>
 set<T> set<T>::operator || (const set <T> & rhs)
@@ -316,8 +340,7 @@ set<T> set<T>::operator || (const set <T> & rhs)
 }
 
 /***********************************************
-*
-*
+* SET : INTERSECTION OPERATOR
 ***********************************************/
 template<class T>
 set<T> set<T>::operator && (const set <T> & rhs)
@@ -361,7 +384,7 @@ set<T> set<T>::operator && (const set <T> & rhs)
 
 
 /***********************************************
-*
+* SET : DIFFERENCE OPERATOR
 *
 ***********************************************/
 template<class T>
@@ -381,8 +404,7 @@ set<T> set<T>::operator-(const set <T> & rhs) //only return objects that are in 
 }
 
 /***********************************************
-*
-*
+* CLASS :: ITERATOR
 ***********************************************/
 template <class T>
 class set <T> ::iterator
@@ -426,8 +448,7 @@ private:
 };
 
 /***********************************************
-*
-*
+* CLASS :: CONST_ITERATOR
 ***********************************************/
 template <class T>
 class set <T> :: const_iterator 
@@ -472,8 +493,8 @@ private:
 };
 
 /***********************************************
-*
-*
+* SET : ITERATOR : FIND
+* Finds a particualr element
 ***********************************************/
 template<class T>
 typename set<T>::iterator set<T>::find(const T & t)
@@ -504,8 +525,8 @@ typename set<T>::iterator set<T>::find(const T & t)
 }
 
 /***********************************************
-*
-*
+* SET : ITERATOR : ERASE
+* erease a particualr element
 ***********************************************/
 template<class T>
 typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
@@ -528,8 +549,8 @@ typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 }
 
 /***********************************************
-*
-*
+* SET : ITERATOR : BEGIN
+* Marks the begining of the set
 ***********************************************/
 template<class T>
 typename set<T>::iterator set<T>::begin()
@@ -538,8 +559,8 @@ typename set<T>::iterator set<T>::begin()
 }
 
 /***********************************************
-*
-*
+* SET : ITERATOR : END
+* Marks the end of the set
 ***********************************************/
 template<class T>
 typename set<T>::iterator set<T>::end()

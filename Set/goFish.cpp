@@ -1,15 +1,9 @@
 /***********************************************************************
-* Program:
-*    Assignment 01, Go Fish
-*    Brother Helfrich, CS 235
+* GO FISH
 * Author:
-*    <your names here>
+*    Kenyon Bunker and Tim O'Barr
 * Summary: 
 *    This is all the functions necessary to play Go Fish!
-*
-*    Estimated:  0.0 hrs   
-*    Actual:     0.0 hrs
-*      Please describe briefly what was the most difficult part.
 ************************************************************************/
 
 #include <iostream>
@@ -70,17 +64,19 @@ void testCard(Card card, int round, set<Card> hand, int matches)
 {
    set<Card>::iterator it = hand.find(card); //Searches hand for card
 
-   if (it != hand.end())
+
+   if (it != hand.end())      //Match
    {
       cout << "You got a match!\n";
       hand.erase(it);
       matches++;
    }
-   else
+   else                       //No match
    {
       cout << "Go Fish!\n";
    }
 
+   //Display after round 5
    if (round >= 5)
    {
       set<Card>::iterator it2 = hand.begin();
