@@ -35,6 +35,7 @@ public:
 	class iterator;
 	class const_iterator;
 
+   //prototype functions
 	int size();
 	int findIndex(const T item) const; 
 	int resize(int numCapacity);
@@ -74,6 +75,7 @@ public:
 		return *this;
 	}
 	
+   //One more oeprator prototype
 	bool operator ==(const iterator & rhs) { return rhs == *this; }
 
    //iterorator functions
@@ -101,7 +103,6 @@ set<T>::set()
 template<class T>
 set<T>::set(int Capacity)
 {
-   //data = nullptr;
    numElements = 0;
    numCapacity = Capacity;
 }
@@ -112,32 +113,39 @@ set<T>::set(int Capacity)
 template<class T>
 set<T>::set(const set & rhs)
 {
-    assert(rhs.numCapacity >= 0);
+   assert(rhs.numCapacity >= 0);
 
-    numElements = 0;
-    numCapacity = 0;
+   //initialize to 0;
+   numElements = 0;
+   numCapacity = 0;
     
+   //if capacity is 0 set to 1
 	if (numCapacity == 0)
 	{
 		resize(1);
 	}
 
+   //If full. resize.
    if (numCapacity == rhs.numElements)
    {
       resize(rhs.numElements);
    }
 
+   //new set
    try
    {
       data = new T[rhs.numCapacity];
    }
+   //error
    catch (std::bad_alloc)
    {
       throw "ERROR: Unable to allocate buffer";
    }
+   //copy capacity and elements
    numCapacity = rhs.numCapacity;
    int tempElements = rhs.numElements;
 
+   //copy elements
    for (int i = 0; i < rhs.numElements; i++)
    {
       insert(rhs.data[i]);
@@ -226,7 +234,6 @@ int set<T>::resize(int Capacity)
 
 		//set new capacity
 		numCapacity = Capacity;
-		//std::cout << "Resize worked" << std::endl;
 	}
    //Error
 	catch (std::bad_alloc) {
