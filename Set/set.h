@@ -175,13 +175,16 @@ int set<T>::findIndex(const T item) const
 
 	while (begining <= ending)
 	{
-		int middle = (begining + ending) / 2;
+
+	int middle = (begining + ending) / 2;
+
+
 		if (item == data[middle])
 		{
 			return middle;
 		}
 
-		else if (item < data[middle]) {
+		if (item < data[middle]) {
 			ending = middle - 1;
 		}
 		else
@@ -287,7 +290,7 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 	{
 		resize(numCapacity * 2);
 	}
-	else
+	else if (t != data[ifFound])
 	{
 		for (int i = numElements; i > 0; i--) // The order of the items in Set
 		{
