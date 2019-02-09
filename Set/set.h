@@ -114,6 +114,9 @@ set<T>::set(const set & rhs)
 {
     assert(rhs.numCapacity >= 0);
 
+    numElements = 0;
+    numCapacity = 0;
+    
 	if (numCapacity == 0)
 	{
 		resize(1);
@@ -220,7 +223,7 @@ int set<T>::resize(int Capacity)
 
 		//set new capacity
 		numCapacity = Capacity;
-		std::cout << "Resize worked" << std::endl;
+		//std::cout << "Resize worked" << std::endl;
 	}
    //Error
 	catch (std::bad_alloc) {
