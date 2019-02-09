@@ -213,7 +213,7 @@ template<class T>
 void set<T>::resize(int capacityNew)
 {
 	// do nothing if there is nothing to do
-	if (capacityNew < numCapacity))
+	if (capacityNew < numCapacity)
 	{
 		return;
 	}
