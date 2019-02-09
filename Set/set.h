@@ -91,7 +91,6 @@ public:
 template<class T>
 set<T>::set()
 {
-   data = nullptr;
    numElements = 0;
    numCapacity = 0;
 }
@@ -102,7 +101,7 @@ set<T>::set()
 template<class T>
 set<T>::set(int Capacity)
 {
-   data = nullptr;
+   //data = nullptr;
    numElements = 0;
    numCapacity = Capacity;
 }
@@ -158,7 +157,7 @@ inline set<T>::~set()
 template<class T>
 int set<T>::size()
 {
-	return numElements - numCapacity + 1;
+   return numElements;
 }
 
 /***********************************************
