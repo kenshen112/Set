@@ -202,7 +202,7 @@ int set<T>::findIndex(const T item) const
 
 	}
 
-	return begining;
+	return numElements;
 }
 
 /***********************************************
@@ -298,17 +298,16 @@ void set<T>::insert(const T & t) // this is from my first attempt it kindaish wo
 	{
 		resize(numCapacity * 2);
 	}
-	else if (t != data[ifFound])
+
+	if (data[ifFound] != t )
 	{
-		for (int i = numElements; i > 0; i--) // The order of the items in Set
+		for (int i = numElements; i < ifFound; i--) // The order of the items in Set
 		{
 			data[i + 1] = data[i];
-			data[ifFound] = t;
 		}
-
+      data[ifFound] = t;
 		numElements++;
 	}
-
 }
 
 /***********************************************
