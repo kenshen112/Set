@@ -38,7 +38,7 @@ public:
    //prototype functions
 	int size();
 	int findIndex(const T item) const; 
-	int resize(int numCapacity);
+	void resize(int capacityNew);
 	bool empty();
 	void clear();
 	void  insert(const T & t);
@@ -210,19 +210,20 @@ int set<T>::findIndex(const T item) const
 * Resizes set when it becomes full
 ***********************************************/
 template<class T>
-int set<T>::resize(int Capacity)
+void set<T>::resize(int capacityNew)
 {
 	// do nothing if there is nothing to do
-	if (Capacity < numCapacity)
+	if (capacityNew < numCapacity))
 	{
-		return 0;
+		return;
 	}
-	int s = 0;
+
 	try
 	{
 		//Create new set  
-		T *dataNew = new T[Capacity];
+		T *dataNew = new T[capacityNew];
 
+      //copy data
 		for (int i = 0; i < numElements; i++)
 		{
 			dataNew[i] = data[i];
@@ -233,7 +234,7 @@ int set<T>::resize(int Capacity)
 		data = dataNew;
 
 		//set new capacity
-		numCapacity = Capacity;
+		numCapacity = capacityNew;
 	}
    //Error
 	catch (std::bad_alloc) {
