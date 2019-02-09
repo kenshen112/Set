@@ -510,7 +510,10 @@ typename set<T>::iterator set<T>::find(const T & t)
 template<class T>
 typename set <T> :: iterator  set <T> ::erase(set <T> ::iterator & it)
 {
-	/*int iErase = find(it);
+   //int iErase = 0;
+   //iErase = find(it);
+   //it++;
+   /*
 	if (data[iErase] == it)
 	{
 		for (int i = iErase; i < numElements; i++)
