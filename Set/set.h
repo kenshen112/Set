@@ -580,12 +580,20 @@ typename set<T>::iterator set<T>::end()
 	return set<T> :: iterator(&data[numElements]);
 }
 
+/***********************************************
+* SET : ITERATOR : CBEGIN
+* Marks the end of the set
+***********************************************/
 template <class T>
 typename set<T>::const_iterator set<T>::cbegin() const
 {
 	return set<T> :: const_iterator(data);
 }
 
+/***********************************************
+* SET : ITERATOR : CEND
+* Marks the end of the set
+***********************************************/
 template <class T>
 typename set<T>::const_iterator set<T>::cend() const
 {
