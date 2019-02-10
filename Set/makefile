@@ -1,13 +1,20 @@
 ###############################################################
 # Program:
 #     Assignment 05, SET
-#     Brother <instructor>, CS235
+#     Brother Kirby, CS235
 # Author:
-#     <your name here>
+#     Kenyon Bunker
+#     Tim O'Barr
 # Summary:
-#     <put a description here>
+#     Go fish game powered by a custom Set
 # Time:
-#     <how long did it take to complete this program>?
+#     Paired: 8
+#     Kenyon: 5
+#     Tim:    5
+# The hardest part:
+#     Kenyon: I struggled with inserting onto the front. The
+#        math and if statements for indexFront was difficult.
+#     Tim: Same thing but just insert in general.
 ###############################################################
 
 ##############################################################

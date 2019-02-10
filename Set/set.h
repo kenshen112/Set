@@ -201,7 +201,6 @@ int set<T>::findIndex(const T item) const
 		{
 			begining = middle + 1;
 		}
-
 	}
 
 	return numElements;
@@ -532,7 +531,6 @@ typename set<T>::iterator set<T>::find(const T & t)
 		{
 			begining = middle + 1;
 		}
-
 	}
 
 	return set <T> ::iterator (&data[numElements]);
@@ -593,6 +591,5 @@ typename set<T>::const_iterator set<T>::cend() const
 {
 	return set<T> :: const_iterator(&data[numElements]);
 }
-
 }
 #endif // !SET_H
